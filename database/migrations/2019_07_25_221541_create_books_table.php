@@ -21,8 +21,8 @@ class CreateBooksTable extends Migration
             $table->text('description')->nullable();
             $table->string('link')->nullable();
             $table->boolean('featured')->default(false);
-            $table->unsignedInteger('category_id');
-          //  $table->foreign('category_id')->references('id')->on('categories')->onUpdate('cascade');
+            $table->unsignedBigInteger('category_id')->index();
+            $table->foreign('category_id')->references('id')->on('categories');
             $table->timestamps();
         });
     }
