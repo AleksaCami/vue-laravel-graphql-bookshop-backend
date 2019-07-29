@@ -78,14 +78,7 @@ type Mutation {
     ): Book @update
 
      deleteBook(
-        id: ID @rules(apply: ["required"])
-        title: String! @rules(apply: ["required"])
-        author: String! @rules(apply: ["required"])
-        image: String
-        link: String
-        description: String
-        featured: Boolean
-        category_id: Int!
+        id: ID! @rules(apply: ["required"])
     ): Book @delete
 
 }
